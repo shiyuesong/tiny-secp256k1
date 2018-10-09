@@ -1,15 +1,15 @@
-const createHmac = require('create-hmac')
+var createHmac = require('create-hmac')
 
-const ONE1 = Buffer.alloc(1, 1)
-const ZERO1 = Buffer.alloc(1, 0)
+var ONE1 = Buffer.alloc(1, 1)
+var ZERO1 = Buffer.alloc(1, 0)
 
 // https://tools.ietf.org/html/rfc6979#section-3.2
 function deterministicGenerateK (hash, x, checkSig, isPrivate) {
   // Step A, ignored as hash already provided
   // Step B
   // Step C
-  let k = Buffer.alloc(32, 0)
-  let v = Buffer.alloc(32, 1)
+  var k = Buffer.alloc(32, 0)
+  var v = Buffer.alloc(32, 1)
 
   // Step D
   k = createHmac('sha256', k)
@@ -37,7 +37,7 @@ function deterministicGenerateK (hash, x, checkSig, isPrivate) {
   // Step H2b
   v = createHmac('sha256', k).update(v).digest()
 
-  let T = v
+  var T = v
 
   // Step H3, repeat until T is within the interval [1, n - 1] and is suitable for ECDSA
   while (!isPrivate(T) || !checkSig(T)) {
