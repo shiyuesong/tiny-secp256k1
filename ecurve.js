@@ -245,16 +245,16 @@ function verify (hash, q, signature) {
 }
 
 module.exports = {
-  isPoint,
-  isPointCompressed,
-  isPrivate,
-  pointAdd,
-  pointAddScalar,
-  pointCompress,
-  pointFromScalar,
-  pointMultiply,
-  privateAdd,
-  privateSub,
-  sign,
-  verify
+  isPoint: isPoint,
+  isPointCompressed: isPointCompressed,
+  isPrivate: isPrivate,
+  pointAdd: pointAdd,
+  pointAddScalar: pointAddScalar,
+  pointCompress: pointCompress,
+  pointFromScalar: pointFromScalar,
+  pointMultiply: pointMultiply,
+  privateAdd: privateAdd,
+  privateSub: privateSub,
+  sign: sign,
+  verify: verify
 }
